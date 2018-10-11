@@ -42,7 +42,7 @@ void Server::receive(std::string& return_buffer) {
   if (n_bytes < 0) {
     std::cerr << "ERROR: " << strerror(errno) << "\nrecvfrom() failed" << std::endl;
   } else {
-    std::cout << "Received datagram from: " << inet_ntoa(client.sin_addr) << "\n";
+    // std::cout << "Received datagram from: " << inet_ntoa(client.sin_addr) << "\n";
    
     // null terminate and copy it to the return string
     buffer[n_bytes] = '\0';
@@ -72,9 +72,5 @@ void Server::send(const std::string& server_ip, int server_port, const std::stri
     std::cerr << "ERROR: " << strerror(errno) << "\nsendto() failed" << std::endl;
   }
 }
-    
-
-
-
 
 } // namespace UDP
