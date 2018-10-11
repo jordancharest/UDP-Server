@@ -26,6 +26,10 @@ class Server {
   Server& operator=(const Server& rhs) = delete;
   Server& operator=(Server&& rhs) = delete;
 
+  // Accessors
+  int getSocketDescriptor() const { return sd_; }
+
+
   // member functions
   void receive(std::string& return_buffer);
   void send(const std::string& server_ip, int server_port, const std::string& buffer);
